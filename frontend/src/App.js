@@ -29,7 +29,7 @@ function App() {
             <Nav className="justify-content-end">
               <Nav>
                 <Link to={"/Create-employee"} className="nav-link">
-                  Create Student
+                  Enter Details
                 </Link>
               </Nav>
               <Nav>
