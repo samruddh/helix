@@ -18,12 +18,12 @@ export default class EditEmployee extends Component {
 
     // State
     this.state = {
-      Id: '',
-      name: '',
-      address: '',
-      email: '',
-      mobile:'',
-      division:''
+      employee_ID : '',
+      employee_Name : '',
+      employee_Address : '',
+      employee_EmailID : '',
+      employee_Mobile :'',
+      employee_Division :''
     }
   }
 
@@ -31,12 +31,12 @@ export default class EditEmployee extends Component {
     axios.get('http://localhost:8000/emp/edit-employee/' + this.props.match.params.id)
       .then(res => {
         this.setState({
-          Id: res.data.Id,
-          name: res.data.name,
-          address: res.data.address,
-          email: res.data.email,
-          mobile: res.data.mobile,
-          division:res.data.division
+          employee_ID: res.data.employee_ID,
+          employee_Name: res.data.employee_Name,
+          employee_Address: res.data.employee_Address,
+          employee_EmailID: res.data.employee_EmailID,
+          employee_Mobile: res.data.employee_Mobile,
+          employee_Division:res.data.employee_Division
         });
       })
       .catch((error) => {
@@ -45,39 +45,39 @@ export default class EditEmployee extends Component {
   }
 
   onChangeEmployeeID(e) {
-    this.setState({ Id: e.target.value })
+    this.setState({ employee_ID: e.target.value })
   }
 
   onChangeEmployeeName(e) {
-    this.setState({ name: e.target.value })
+    this.setState({ employee_Name: e.target.value })
   }
 
   onChangeEmployeeAddress(e) {
-    this.setState({ address: e.target.value })
+    this.setState({ employee_Address: e.target.value })
   }
 
   onChangeEmployeeEmail(e) {
-    this.setState({ email: e.target.value })
+    this.setState({ employee_EmailID: e.target.value })
   }
 
   onChangeEmployeeMobile(e) {
-    this.setState({ mobile: e.target.value })
+    this.setState({ employee_Mobile: e.target.value })
   }
 
   onChangeEmployeeDivision(e) {
-    this.setState({ division: e.target.value })
+    this.setState({ employee_Division: e.target.value })
   }
 
   onSubmit(e) {
     e.preventDefault()
 
     const employeeObject = {
-      Id: this.state.Id,
-      name: this.state.name,
-      address: this.state.address,
-      email: this.state.email,
-      mobile: this.state.mobile,
-      division:this.state.division
+      employee_ID: this.state.employee_ID,
+      employee_Name: this.state.employee_Name,
+      employee_Address: this.state.employee_Address,
+      employee_EmailID: this.state.employee_EmailID,
+      employee_Mobile: this.state.employee_Mobile,
+      employee_Division:this.state.employee_Division
     };
 
     axios.put('http://localhost:8000/emp/update-employee/' + this.props.match.params.id, employeeObject)
@@ -98,32 +98,32 @@ export default class EditEmployee extends Component {
       <Form onSubmit={this.onSubmit}>
         <Form.Group controlId="Id">
           <Form.Label>ID</Form.Label>
-          <Form.Control type="text" value={this.state.Id} onChange={this.onChangeEmployeeID} />
+          <Form.Control type="text" value={this.state.employee_ID} onChange={this.onChangeEmployeeID} />
         </Form.Group>
 
         <Form.Group controlId="Name">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" value={this.state.name} onChange={this.onChangeEmployeeName} />
+          <Form.Control type="text" value={this.state.employee_Name} onChange={this.onChangeEmployeeName} />
         </Form.Group>
 
         <Form.Group controlId="Address">
           <Form.Label>Address</Form.Label>
-          <Form.Control type="text" value={this.state.Adress} onChange={this.onChangeEmployeeAddress} />
+          <Form.Control type="text" value={this.state.employee_Address} onChange={this.onChangeEmployeeAddress} />
         </Form.Group>
 
         <Form.Group controlId="Email">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="text" value={this.state.email} onChange={this.onChangeEmployeeEmail} />
+          <Form.Control type="text" value={this.state.employee_EmailID} onChange={this.onChangeEmployeeEmail} />
         </Form.Group>
 
         <Form.Group controlId="Mobile">
           <Form.Label>Mobile</Form.Label>
-          <Form.Control type="text" value={this.state.mobile} onChange={this.onChangeEmployeeMobile} />
+          <Form.Control type="text" value={this.state.employee_Mobile} onChange={this.onChangeEmployeeMobile} />
         </Form.Group>
 
         <Form.Group controlId="Division">
           <Form.Label>Division</Form.Label>
-          <Form.Control type="text" value={this.state.division} onChange={this.onChangeEmployeeDivision} />
+          <Form.Control type="text" value={this.state.employee_Division} onChange={this.onChangeEmployeeDivision} />
         </Form.Group>
 
         <Button variant="danger" size="lg" block="block" type="submit">

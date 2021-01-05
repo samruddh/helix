@@ -22,12 +22,12 @@ export default class EmployeeTableRow extends Component {
     render() {
         return (
             <tr>
-                <td>{this.props.obj.Id}</td>
-                <td>{this.props.obj.name}</td>
-                <td>{this.props.obj.address}</td>
-                <td>{this.props.obj.email}</td>
-                <td>{this.props.obj.mobile}</td>
-                <td>{this.props.obj.division}</td>
+                <td>{this.props.obj.employee_ID}</td>
+                <td>{this.props.obj.employee_Name}</td>
+                <td>{this.props.obj.employee_Address}</td>
+                <td>{this.props.obj.employee_EmailID}</td>
+                <td>{this.props.obj.employee_Mobile}</td>
+                <td>{this.props.obj.employee_Division}</td>
                 <td>
                     <Link className="edit-link" to={"/Edit-employee/" + this.props.obj._id}>
                         Edit
