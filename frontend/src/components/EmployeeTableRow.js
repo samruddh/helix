@@ -29,10 +29,10 @@ export default class EmployeeTableRow extends Component {
                 <td>{this.props.obj.employee_Mobile}</td>
                 <td>{this.props.obj.employee_Division}</td>
                 <td>
-                    <Link className="edit-link" to={"/Edit-employee/" + this.props.obj._id}>
+                    <Link className="edit-link"  to={"/Edit-employee/" + this.props.obj._id}>
                         Edit
                     </Link>
-                    <Button onClick={this.deleteEmployee} size="sm" variant="danger">Delete</Button>
+                    <Button onClick={this.deleteEmployee} style={{marginTop:'25px'}} size="sm" variant="danger">Delete</Button>
                 </td>
             </tr>
         );
